@@ -1,0 +1,81 @@
+.flexi {
+    position: relative;
+    /* display: flex; */
+    /* margin: 3px; */
+    /* flex-wrap: wrap; */
+}
+
+select {
+    margin: 1rem;
+    padding: 1px 18px;
+    border: none;
+    outline: none;
+}
+
+.crea button {
+    /* color: rgb(22, 17, 17);
+    background-color: beige;
+    padding: 7px; */
+    /* display:flex; */
+    top: .5rem;
+    position: absolute;
+
+    background-color: transparent;
+    color: #fff;
+    font-size: 25px;
+    font-family: Lato, Arial, Helvetica, sans-serif;
+    border-radius: 100px;
+    border: #fff solid 3px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    text-align: justify;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    margin-left: 1rem;
+}
+
+.crea button:hover {
+    background-color: #fff;
+    color: #220F00;
+    transition-delay: 0.2s;
+    transition: 0.8s;
+}
+
+
+.imgs {
+    width: 80px;
+    /* position: absolute; */
+    /* left: 0.1rem; */
+    /* margin-top: 2rem; */
+    /* margin: 1rem; */
+    padding-right: 1rem;
+    /* margin-left: 0; */
+}
+
+.firstContainer {
+    display: flex;
+    width: 100%;
+    /* top:0; */
+    /* flex-direction: row; */
+    /* align-items: center; */
+    /* justify-content: baseline; */
+    justify-content: space-between;
+    /* flex-wrap: wrap; */
+    /* height: 6rem; */
+    /* padding: 1rem; */
+    /* background: black; */
+    /* margin-bottom: 1rem; */
+}
+
+.secondContainer {
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: space-around;
+    /* margin-left: 20px; */
+    /* margin-right: 60px; */
+    /* flex-wrap: wrap; */
+    margin: 1rem;
+}
+

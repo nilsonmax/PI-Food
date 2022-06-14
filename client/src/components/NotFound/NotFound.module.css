@@ -1,0 +1,7 @@
+.notfound{
+   display: flex;
+   justify-content: center;
+  position: absolute;
+  left: 25rem;
+  width: 600px;
+}

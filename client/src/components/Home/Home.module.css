@@ -1,0 +1,83 @@
+div .flex{    
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 1rem;
+    place-items: center;
+    place-content: center;
+   
+
+}
+@media screen and (max-width:900px) {
+    div .flex{
+       grid-template-columns: repeat(3,1fr);
+    }
+}
+@media screen and (max-width:760px) {
+    div .flex{
+       grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media screen and (max-width:450px) {
+    div .flex{
+       grid-template-columns: repeat(1,1fr);
+    }
+}
+.refres{
+    display: flex;
+    justify-content: center;
+   
+   
+}
+.btn p{
+    font-size: 14px;
+}
+.btn{
+    
+    font-size: 40px;
+    color: rgba(245, 222, 179, 0.61);
+}
+
+.conteiner{
+    width: 90%;
+    max-width: 120rem;
+    margin: 1px auto;
+}
+
+.options{
+    background: rgba(0, 0, 0, 0.2);
+    color: black; 
+    width: 100%;
+    /* position: fixed; */
+    /* display:flex; */
+    /* justify-content: center; */
+    /* padding: 20px 30px; */
+
+}
+
+.stickyNav {
+    position: fixed;
+    /* display: flex; */
+    /* justify-content: center; */
+    background: rgba(0, 0, 0, 0.6);
+    color: black;
+    width: 100%;
+    height:150px;
+}
+
+.na{
+    font-size:18px;
+    color: rgba(214, 195, 159, 0.623);
+}
+
+.parrafe{
+    font-size: 17px;
+}
+
+.letras{
+    color: white;
+}
+
+.letrasTransparent{
+     color:transparent;
+}

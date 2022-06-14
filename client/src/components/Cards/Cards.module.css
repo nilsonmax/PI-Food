@@ -1,0 +1,57 @@
+.score {
+    font-size: 14px;
+    color: withe;
+    color: rgb(0, 0, 0);
+    background: rgb(236, 204, 138);
+    margin:0;
+
+}
+
+.name {
+    font-family: cursive;
+    margin: 3px;
+    color: rgb(245, 237, 220);
+    text-shadow: 0.1em 0.1em 0.2em black;
+}
+
+img {
+    width: 100%;
+}
+
+p {
+    text-align: center;
+    align-items: center;
+    height: 23px;
+}
+
+.conteiner {
+    width: 90%;
+    max-width: 120rem;
+    margin: 1px auto;
+    background: rgba(104, 100, 100, 0.459);
+    padding: 18px 18px;
+    box-shadow: 3px -1px 50px -11px rgba(0, 0, 0, 1);
+    -webkit-box-shadow: 3px -1px 50px -11px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 3px -1px 50px -11px rgba(0, 0, 0, 1);
+}
+
+.conteiner:hover{
+    transform: scale(1.05);
+    background: rgba(104, 100, 100, 0.6);
+    box-shadow: 0 0 10px rgba(104, 100, 100, 0.6), 0 0 20px rgba(104, 100, 100, 0.6), 0 0 40px rgba(104, 100, 100, 0.6);
+    transition-delay: .1s;
+    /* color: beige; */
+}
+
+.image {
+    background-size: cover;
+    margin:0;
+}
+
+.diets {
+    background: rgb(243, 222, 179);
+    height: 70px;
+    /* border-radius: 24px; */
+    padding: 2px;
+    font-family: cursive;
+}
