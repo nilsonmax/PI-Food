@@ -8,7 +8,7 @@ const router = express.Router();
 
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
-router.use("/recipe", Recipes)
-router.use("/types", Diets)
+router.use("/recipes", Recipes)
+router.use("/diets", Diets)
 
 module.exports = router

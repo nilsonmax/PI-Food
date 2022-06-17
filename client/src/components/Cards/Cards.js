@@ -14,7 +14,7 @@ const Card = ({ id, name, image, healthyScore, diets}) => {
                 </Link>
                 <img width={240} className={s.image} height={240} src={image} alt="" />
                 <p className={s.score}>Score: {healthyScore}</p>
-                 <p className={s.diets}>{diets}</p>
+                 <p className={s.diets}>{diets}</p> {console.log(diets)}
             </div>
 
         </div>

@@ -24,7 +24,7 @@ const Home = () => {
             windowHeight > 300 ? setStickyClass(s.stickyNav) : setStickyClass(s.options)
         }
     }
-    
+
     // para mostrar los recipes
     const dispatch = useDispatch()
     const recipes = useSelector((state) => state.recipe)
@@ -70,7 +70,7 @@ const Home = () => {
             </div>
             <div className={s.refres}>
                 <button className={s.btn} onClick={refres}> <p className={s.na}>refresh</p>🍽</button>
-              <div><Search /> </div> 
+                <div><Search /> </div>
 
             </div>
             <Paginacion recipes={recipes.length}
@@ -82,6 +82,7 @@ const Home = () => {
                     allpages.length > 0 && !loading ? (
 
                         allpages?.map((r) => {
+                            
                             return (
 
                                 <Card
@@ -89,7 +90,9 @@ const Home = () => {
                                     id={r.id}
                                     name={r.name}
                                     image={r.image}
-                                    diets={r.type || r.Diets.map(e => e.name)}
+                                    //diets={r.diets ? r.diets : r.Diets.map(e => e.name)}
+                                    
+                                    diets={r.createdInDb ? r.diets.map(r => <p className={s.diet} >{r.name}</p>): r.diets}
                                     healthyScore={r.healthyScore}
                                 />
 

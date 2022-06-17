@@ -17,7 +17,7 @@ export const getRecipes = () => {
     return async (dispatch) => {
         try {
 
-            let json = await axios.get(`http://localhost:3001/recipe`)
+            let json = await axios.get(`http://localhost:3001/recipes`)
             return dispatch({
                 type: GET_RECIPE,
                 payload: json.data
@@ -30,10 +30,10 @@ export const getRecipes = () => {
 }
 
 export const getByName = (name) => {
-    return async (dispatch)=> {
+    return async (dispatch) => {
         try {
 
-            let json = await axios.get(`http://localhost:3001/recipe?name=${name}`);
+            let json = await axios.get(`http://localhost:3001/recipes?name=${name}`);
             return dispatch({
                 type: GET_BY_NAME,
                 payload: json.data
@@ -52,7 +52,7 @@ export const types = () => {
     return async (dispatch) => {
         try {
 
-            let json = await axios.get("http://localhost:3001/types")
+            let json = await axios.get("http://localhost:3001/diets")
             return dispatch({
                 type: GET_TYPES,
                 payload: json.data
@@ -68,7 +68,7 @@ export const getDetail = (id) => {
     return async (dispatch) => {
         try {
 
-            const res = await axios.get(`http://localhost:3001/recipe/${id}`)
+            const res = await axios.get(`http://localhost:3001/recipes/${id}`)
             return dispatch({
                 type: GET_DIET,
                 payload: res.data
@@ -85,7 +85,7 @@ export const postCreate = (payload) => {
         try {
 
             const json = await axios.post(
-                "http://localhost:3001/recipe/create",
+                "http://localhost:3001/recipes/create",
                 payload
             )
             return json
@@ -98,7 +98,7 @@ export const postCreate = (payload) => {
 
 export const Remove = (id) => {
     return (dispatch) => {
-        axios.delete(`http://localhost:3001/recipe/delete/${id}`).then((remo) => {
+        axios.delete(`http://localhost:3001/recipes/delete/${id}`).then((remo) => {
             dispatch({
                 type: DELETE,
                 payload: remo.id

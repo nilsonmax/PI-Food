@@ -10,7 +10,8 @@ import {
     FILTER_ASC,
     FILTER_CREAD,
     FILTER_MIN,
-    DELETE
+    DELETE,
+    // GET_RECIPE_DB
 } from "../action/index"
 
 const initialState = {
@@ -28,8 +29,15 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 recipe: action.payload,
-                copia: action.payload
+                copy: action.payload
             }
+
+        // case GET_RECIPE_DB:
+        //     return {
+        //         ...state,
+        //         recipe: action.payload,
+        //         copia: action.payload
+        //     }
 
         case DELETE:
             return {
@@ -38,6 +46,7 @@ const reducer = (state = initialState, action) => {
             }
 
         case GET_BY_NAME:
+            console.log(action.payload)
             return {
                 ...state,
                 recipe: action.payload
@@ -60,11 +69,12 @@ const reducer = (state = initialState, action) => {
 
         case GET_TYPES_DIET:
             const allRecipes = state.copy;
-
+            // console.log(allRecipes)
             const all = action.payload === "All"
-                    ? allRecipes
-                    : allRecipes.filter((r) => r.type?.includes(action.payload))
-            //   console.log(all)
+                ? allRecipes
+                : allRecipes.filter((r) => r.diets?.includes(action.payload))
+            //  console.log(all)
+
 
             return {
                 ...state,
@@ -72,7 +82,6 @@ const reducer = (state = initialState, action) => {
             }
 
         case GET_TYPES:
-            // console.log(action.payload)
             return {
                 ...state,
                 typeDiets: action.payload
@@ -89,24 +98,22 @@ const reducer = (state = initialState, action) => {
             const scoreSorted = state.recipe ? state.recipe : state.recipe
             let orderByScore = action.payload === "min"
                 ? scoreSorted.sort((a, b) => {
-                    if (a.score < b.score) return -1
-                    if (a.score > b.score) return 1
+                    if (a.healthyScore < b.healthyScore) return -1
+                    if (a.healthyScore > b.healthyScore) return 1
                     return 0
                 })
                 : scoreSorted.sort((a, b) => {
-                    if (a.score < b.score) return 1
-                    if (a.score > b.score) return -1
+                    if (a.healthyScore < b.healthyScore) return 1
+                    if (a.healthyScore > b.healthyScore) return -1
                     return 0
                 })
 
-            // console.log(orderByScore)
             return {
                 ...state,
                 recipe: [...orderByScore]
             }
 
         case GET_DIET:
-            //  console.log(action.payload)
             return {
                 ...state,
                 detail: action.payload[0]
@@ -125,9 +132,11 @@ const reducer = (state = initialState, action) => {
             }
 
         case FILTER_CREAD:
+           // console.log(action.payload)
             const creatorFilter = action.payload === "createdInDb"
                 ? state.copy?.filter((el) => el.createdInDb) : state.copy?.filter((el) => !el.createdInDb)
-
+               // console.log(creatorFilter)
+               // console.log(state.copy)
             return {
                 ...state,
                 recipe: action.payload === "ALL" ? state.copy : creatorFilter

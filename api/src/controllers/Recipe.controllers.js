@@ -2,6 +2,7 @@ const axios = require('axios')
 const { Diet, Recipe } = require("../db")
 const { getApìDiets } = require('./Diets.controllers')
 const { API_KEY } = process.env
+//const { Op } = require("sequelize");
 
 // const { Router } = require('express')
 // const router = Router()
@@ -17,7 +18,7 @@ const getApiInfo = async () => {
                 id: recipes.id.toString(),
                 image: recipes.image,
                 name: recipes.title.toLowerCase(),
-                type: recipes.diets,
+                diets: recipes.diets,
                 summary: recipes.summary,
                 healthyScore: recipes.healthScore,
                 dishTypes: recipes.dishTypes,
@@ -40,11 +41,23 @@ const getDbInfo = async () => {
     const dietFindAll = await Recipe.findAll({
         include: {
             model: Diet,
-            attributes: ["name"]
+            attributes: ['name'],
+            through: {
+                attributes: []
+            } //ver si la sintaxis esta bien escrita
         }
     })
     return dietFindAll
 }
+
+// const getDbMostrar = async (req, res) => {
+//     try {
+//         const recipe = await getDbInfo()
+//         return res.send(recipe)
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }
 
 const getAllRecipes = async () => {
     const api = await getApiInfo()
@@ -90,7 +103,7 @@ const getIdRecipe = async (req, res) => {
 }
 
 const postCreate = async (req, res) => {
-    const { name, summary, healthyScore, steps, type, image, dishTypes } = req.body
+    const { name, summary, healthyScore, steps, diets, image, dishTypes } = req.body
     try {
         const newRecipe = await Recipe.create({
             name,
@@ -99,14 +112,14 @@ const postCreate = async (req, res) => {
             steps,
             image,
             dishTypes,
-            type
+            diets
         })
         await getApìDiets()
         const getDiet = await Diet.findAll({
-            where: { name: type }
+           where: { name: diets }
         })
         await newRecipe.addDiet(getDiet)
-     
+
         return res.status(200).send({ msg: "successfully created" })
     } catch (error) {
         console.log(error)
@@ -134,7 +147,8 @@ module.exports = {
     getIdRecipe,
     getByName,
     postCreate,
-    deleted
+    deleted,
+    // getDbMostrar
 }
 
 // {

@@ -7,7 +7,7 @@ const Create = () => {
 
 
     // Validates 
-    const validate = () => {
+    const validate = (input) => {
         let errors = {}
 
         if (input.name === "") {
@@ -28,16 +28,16 @@ const Create = () => {
         } else if (input.dishTypes === "") {
             errors.dishTypes = "required field"
 
-        } else if (input.type.length === 0) {
-            errors.type = "it has to be a different diet"
-       
+        } else if (input.diets.length === 0) {
+            errors.diets = "it has to be a different diet"
+
         } else if (!input.healthyScore) {
             errors.healthyScore = "required field"
-       
+
         } else if (!input.image.includes("https")) {
-            errors.image = 'Please insert an image type URL'
-       
-        } else if (!input.steps) {
+            errors.image = 'Please insert an image type URL https'
+
+        } else if (input.steps === "") {
             errors.steps = "required field"
         }
         return errors
@@ -48,7 +48,9 @@ const Create = () => {
     const diet = useSelector(state => state.typeDiets)
 
     let navigate = useNavigate()
-    const [errors, setErrors] = useState({})
+    const [errors, setErrors] = useState({
+        name: 'name required'
+    })
     const [input, setInput] = useState({
         name: '',
         summary: '',
@@ -56,7 +58,7 @@ const Create = () => {
         steps: '',
         image: '',
         dishTypes: '',
-        type: []
+        diets: []
     })
 
     const handleChange = (e) => {
@@ -73,12 +75,12 @@ const Create = () => {
 
     const handleSelect = (e) => {
 
-        if (input.type.includes(e.target.value)) {
+        if (input.diets.includes(e.target.value)) {
             return 'Diet Type exists'
         } else {
             setInput({
                 ...input,
-                type: [...input.type, e.target.value]
+                diets: [...input.diets, e.target.value]
             })
         }
 
@@ -92,31 +94,31 @@ const Create = () => {
     const handleDelete = (el) => {
         setInput({
             ...input,
-            type: input.type.filter(e => e !== el)
+            diets: input.diets.filter(e => e !== el)
         })
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        setErrors(validate(input))
-        const errorSave = validate(input)
-        
-        if (Object.values(errorSave).length === 0) {
-            alert('The recipe is not created, fill in the required fields!')
-        } else {
-            dispatch(postCreate(input))
-            alert("recipe created successfully")
-            setInput({
-                name: '',
-                summary: '',
-                healthyScore: '',
-                steps: '',
-                image: '',
-                dishTypes: '',
-                type: []
-            })
-            navigate('/home')
-        }
+        // setErrors(validate(input))
+        // const errorSave = validate(input)
+
+        // if (Object.values(errorSave).length !== 0) {
+        //     alert('The recipe is not created, fill in the required fields!')
+        // } else {
+        dispatch(postCreate(input))
+        alert("recipe created successfully")
+        setInput({
+            name: '',
+            summary: '',
+            healthyScore: '',
+            steps: '',
+            image: '',
+            dishTypes: '',
+            diets: []
+        })
+        navigate('/home')
+        // }
 
     }
 
@@ -231,7 +233,7 @@ const Create = () => {
 
                 <div className={s.op}>
                     <select onChange={handleSelect} className={s.selet}>
-                        <option value={input.type} name="type">Diet..</option>
+                        <option value={input.diets} name="diets">Diet..</option>
 
                         {
                             diet?.map(c => {
@@ -243,19 +245,19 @@ const Create = () => {
                     </select>
 
                     {
-                        errors.type && (
-                            <p className={s.error}>{errors.type}</p>
+                        errors.diets && (
+                            <p className={s.error}>{errors.diets}</p>
                         )
                     }
                 </div>
 
-                <button type='submit' className={s.bto} onSubmit={handleSubmit}>Crear</button>
+                <button type='submit' className={s.bto} onSubmit={handleSubmit} disabled={Object.keys(errors).length === 0 ? false : true}>Crear</button>
 
             </form>
 
             <div className={s.xx}>
                 {
-                    input.type.map((el) => (
+                    input.diets.map((el) => (
                         <div key={el} className={s.a}>
                             <span >{el}</span >
                             <button className={s.bt} onClick={() => handleDelete(el)}> x </button>

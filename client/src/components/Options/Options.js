@@ -20,13 +20,15 @@ const Options = ({ set }) => {
         dispatch(getRecipes())
     }, [dispatch])
 
+    // useEffect(() => {
+    //     dispatch(getRecipesDb())
+    // }, [dispatch])
 
     const handlefilter = (e) => {
         e.preventDefault()
         dispatch(getTypeDiet(e.target.value))
         set(1)
     }
-
 
     const sortByScore = (e) => {
         e.preventDefault()
@@ -39,11 +41,6 @@ const Options = ({ set }) => {
         dispatch(getCreates(e.target.value))
         set(1)
     }
-
-    // const refres = (e) => {
-    //     e.preventDefault()
-    //     window.location.reload()
-    // }
 
     return (
         <div className={s.flexi}>
