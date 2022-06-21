@@ -12,7 +12,7 @@ const RecipesDetail = () => {
     const dispatch = useDispatch()
     let navigate = useNavigate()
     const details = useSelector((state) => state.detail)
-    //  console.log(details)
+    console.log(details)
 
     useEffect(() => {
         dispatch(getDetail(id))
@@ -30,29 +30,20 @@ const RecipesDetail = () => {
     let [loading, setLoading] = useState(true)
 
     if (typeof details.name !== 'undefined' && loading) {
-        console.log('estoy en setLoading', loading)
+        // console.log('estoy en setLoading', loading)
         setLoading(false)
-    } else {
-        console.log(' no estoy en setLoading', loading)
-    }
-
-    // if (Object.entries(details.name).length > 0 && !loading) {
+    } //  else {
+    //      console.log(' no estoy en setLoading', loading)
+    // }
 
     console.log(details.name)
+    console.log(details.id)
 
-    // if(typeof details.name === 'undefined'){
-    //    console.log("details.name no está definido");
-    //    <Loading />
-    //  } else {
-    //    console.log("details.name está definido");
-
-    // }
     return (
         <>
             {
                 typeof details.name !== 'undefined' && !loading ? (
                     // return (
-
 
                     <div className={s.contenedor}>
 
@@ -74,11 +65,11 @@ const RecipesDetail = () => {
                             </div>
                             <section className={s.wrapper}>
                                 <div className={s.columns}>
-                                    {details.Diets ? <button className={s.crux} onClick={(e) => handle(e)}>Remove</button> : ""}
-
+                                    {/* {details.Diets ? <button className={s.crux} onClick={(e) => handle(e)}>Remove</button> : ""}
+                                    */}
                                     <div className={s.column}>
                                         <h3 className={s.textFirst}>Diet Type:</h3>
-                                        {details.Diets ? details.Diets.map((e, i) => <h2 key={i} className={s.dishesanddiets}>{e.name}</h2>)
+                                        {details.createdInDb ? details.diets.map((e, i) => <h2 key={i} className={s.contentFirst}>{e.name}</h2>)
                                             : <h4 className={s.contentFirst}>{details.diets}</h4>
                                         }
                                     </div>

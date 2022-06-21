@@ -20,9 +20,6 @@ const Options = ({ set }) => {
         dispatch(getRecipes())
     }, [dispatch])
 
-    // useEffect(() => {
-    //     dispatch(getRecipesDb())
-    // }, [dispatch])
 
     const handlefilter = (e) => {
         e.preventDefault()
@@ -46,7 +43,9 @@ const Options = ({ set }) => {
         <div className={s.flexi}>
             <div className={s.firstContainer}>
                 <div>
-                    <img className={s.imgs} src={plato} alt="" />
+                    <Link to="/" >
+                        <img className={s.imgs} src={plato} alt="" />
+                    </Link>
                     <Link to="/recipe/create" >
                         <button className={s.rainbowButton} alt="Create"></button>
                     </Link>
@@ -97,7 +96,7 @@ const Options = ({ set }) => {
                     </select>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 

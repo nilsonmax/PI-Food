@@ -5,7 +5,7 @@
     text-shadow: 0.1em 0.1em 0.2em black; */
 } 
 
-.conteiner {
+/* .conteiner {
     
     position:relative;
     width: 90%;
@@ -16,7 +16,7 @@
     box-shadow: 3px -1px 50px -11px rgba(0, 0, 0, 1);
     -webkit-box-shadow: 3px -1px 50px -11px rgba(0, 0, 0, 1);
     -moz-box-shadow: 3px -1px 50px -11px rgba(0, 0, 0, 1);
-}
+} */
 
 .conteiner:hover{
     transform: scale(1.05);
@@ -34,6 +34,7 @@
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     width: 250px;
+    height: 400px;
   }
 
   .card:hover {

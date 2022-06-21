@@ -26,7 +26,7 @@ const Search = () => {
 
       <form action="">
         <input type="text"
-          placeholder='Buscar Recetas.. '
+          placeholder='Search Recipes... '
           value={name}
           onChange={handleChange}
           autoComplete='off'

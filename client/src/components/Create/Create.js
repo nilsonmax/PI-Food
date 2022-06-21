@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { postCreate, types } from '../../redux/action'
 import s from '../Create/Create.module.css'
+import imgFondo from '../../images/bgheading02.jpg'
 const Create = () => {
 
 
@@ -100,12 +101,6 @@ const Create = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        // setErrors(validate(input))
-        // const errorSave = validate(input)
-
-        // if (Object.values(errorSave).length !== 0) {
-        //     alert('The recipe is not created, fill in the required fields!')
-        // } else {
         dispatch(postCreate(input))
         alert("recipe created successfully")
         setInput({
@@ -118,8 +113,6 @@ const Create = () => {
             diets: []
         })
         navigate('/home')
-        // }
-
     }
 
     useEffect(() => {
@@ -128,15 +121,19 @@ const Create = () => {
 
 
     return (
-        <div className={s.fondo}>
-            <div className={s.formulario}>
-
-                <Link to="/home" className={s.linkB}>
+        // <div className={s.fondo}>
+        <div className={s.formulario}>
+            <div className={s.forma}>
+                <div className={s.cardHeader}>
+                    <img src={imgFondo} alt="" />
+                </div>
+                <Link to="/home" className={s.buttonBack}>
                     <span>back</span>
                 </Link>
-
+        <div className={s.title}><h2 >CREATE RECIPE</h2></div>
+               
                 <form action="" onSubmit={(e) => handleSubmit(e)} className={s.fondoform}>
-
+                
                     <label htmlFor="">URL Img</label>
                     <div>
                         <input className={s.inputt}
@@ -165,6 +162,7 @@ const Create = () => {
                         {
                             errors.name && (
                                 <p className={s.error}>{errors.name}</p>
+                               
                             )
                         }
                     </div>
@@ -201,22 +199,12 @@ const Create = () => {
                         }
                     </div>
 
-                    {/* <div className={styles.subContainer}> */}
-                    {/* label className={styles.subTitle}>Puntuación Salud</label> 
-                    <input className={styles.subInput} type="range" min="0" max="100" value={post.healthScore} name="healthScore" onChange={(e) => handleChange(e)}></input>
-                    {<p className={styles.data}>{post.healthScore}</p>}
-                </div> */}
-
                     <label htmlFor="">HealthyScore</label>
                     <div className={s.subContainer}>
                         <input className={s.subinput}
-                            // type="number"
                             type="range" min="1" max="100"
                             value={input.healthyScore}
                             name="healthyScore"
-                            //placeholder='0-100'
-                            // min="1"
-                            // max="100"
                             onChange={handleChange}
                         />
 
@@ -225,23 +213,23 @@ const Create = () => {
                                 <p className={s.error}>{errors.healthyScore}</p>
                             )
                         }
-                    </div>
                     <label htmlFor="">{`Point: ${input.healthyScore ? input.healthyScore : 0}%`}</label>
-
+                    </div>
+                   
                     <label htmlFor="">Step by Step</label>
                     <div>
-                        <textarea className={s.textar} onChange={handleChange} type="text" name="steps" value={input.steps}>
+                        <textarea className={s.inputt} onChange={handleChange} type="text" name="steps" value={input.steps}>
                         </textarea>
 
                         {
                             errors.steps && (
-                                <p className={s.error}>{errors.steps}</p>
+                                <div><p className={s.error}>{errors.steps}</p></div>
                             )
                         }
                     </div>
 
                     <div>
-                        <select onChange={handleSelect} className={s.selet}>
+                        <select onChange={handleSelect}>
                             <option value={input.diets} name="diets">Diet..</option>
 
                             {
@@ -264,19 +252,20 @@ const Create = () => {
 
                 </form>
 
-                <div className={s.xx}>
+                <div className={s.cajaDieta}>
+
                     {
                         input.diets.map((el) => (
-                            <div key={el} className={s.a}>
-                                <span >{el}</span >
+                            <div key={el} className={`${s.space} ${s.tagTeal}`}>
                                 <button className={s.bt} onClick={() => handleDelete(el)}> x </button>
+                                <span className={s.letraSpace}>{el}</span >
                             </div>
                         ))
                     }
                 </div>
 
             </div>
-         </div>
+        </div>
     )
 }
 

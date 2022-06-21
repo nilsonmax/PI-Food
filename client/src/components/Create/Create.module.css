@@ -1,137 +1,89 @@
-.fondo {
-    background: url(../../images/fondo-home.jpg);
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
-.fondo:before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.7);
-}
-
 .formulario {
     display: flex;
     justify-content: center;
-    /* margin: 1rem; */
-    position: relative;
+    margin-top: 2rem;
+    min-width: 775px;
 
+   
+} 
+.forma{
+    position:relative;
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    /* width: 750px; */
+  /*  height: 400px;   */
 }
+
+.title {
+    display: flex;
+    justify-content: center;
+   
+}
+
+ .cardHeader img {
+    position: absolute;
+    /* left: -3rem;  */
+    /* top: 10px; */
+    /* width: 70%;
+    height: 97%;  */
+    width: 200px; 
+    height: 620px; 
+    object-fit: cover;
+    /* margin:10px; */
+    /* border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px; */
+} 
 
 .fondoform {
+    position: relative;
     /* background: rgba(24, 22, 22, 0.897); */
-    background: rgba(255, 255, 255);
-    padding: 3rem 20rem;
+    /* background: rgba(255, 255, 255); */
+    padding: 1rem 14rem;
     border-radius: 18px;
-    margin: 6px;
+    /* margin: 6px; */
 }
 
-.linkB span {
+.buttonBack {
     background: rgb(231, 76, 60);
     padding: 10px 30px;
     /* position: absolute; */
-    left: 10rem;
+    left: 2rem;
     top: 2rem;
     text-align: center;
     margin: 1px;
     color: rgba(255, 255, 255);
     position:relative;
+    border-radius: 10px;
     
 }
 
+.buttonBack:hover{
+    color: rgb(231, 76, 60);
+    background: rgba(255, 255, 255);
+}
 .inputt {
     margin: 3px;
     padding: 5px 19px;
 }
 
-.inputs {
-    padding: 5px 70px;
+label { 
+    /* color: rgb(255, 0, 0); */
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
 }
 
-label {
-    /* color: white; */
-    display: flex;
-    justify-content: center;
-
-}
-
-.textar {
-    padding: 8px 22px;
-    justify-content: center;
-    /* border-radius: 18px; */
-
-}
 
 .error {
     color: rgb(255, 0, 0);
     text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    justify-content:center;
 }
-
-.selet {
-    padding: 5px 15px;
-    align-items: center;
-    /* border: red; */
-}
-
-.deleted {
-    /* background: #000; */
-    padding: 20px 70px;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    position: absolute;
-    top: 10rem;
-    right: 4px;
-}
-
-.pa {
-    color: white;
-    background: #000;
-
-}
-
-.bt {
-    background: #000;
-    color: white;
-    margin: 2rem;
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-
-}
-
-.lis {
-    background: #000;
-    color: wheat;
-    text-align: center;
-}
-
-.listas {
-    margin-left: 2rem;
-}
-
-.fle {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    left: 15rem;
-    top: 15rem;
-    margin: 5px;
-}
-
-input {
-    margin-top: 1rem;
-    text-align: center;
-    justify-content: center;
-}
-
 
 .bto {
     background: rgb(95, 89, 89);
@@ -145,36 +97,49 @@ input {
     background: rgb(184, 174, 174);
     color: black;
 }
-
-.xx {
-    background: white;
+/************ caja ****************/
+.cajaDieta {
+    /* background-color: #47bcd4; */
     flex-direction: column;
     display: flex;
     position: absolute;
     flex-wrap: wrap;
-    right: 16rem;
-    top: 4rem;
-    margin: 1rem;
+    right: 1rem;
+    top: 6rem;
+    color: white;
+    cursor: pointer; 
 }
 
-.a {
+.tagTeal {
+    background-color: #47bcd4;
+}
+
+.space {
     margin: 4px;
-    border: solid black;
+    border-radius: 18px;
 }
 
-.subInput {
-    flex-direction: column;
-    align-self: center;
-    width: 90%;
-    border: 2px solid rgb(0, 0, 0);
-    border-radius: 4px;
-    /*
-    border: none;
-    border-bottom: 2px solid rgb(0, 0, 0);
-    */
+.letraSpace{
+    margin-right: 5px;
+}
+
+.bt {
+    background: #000;
+    color: white;
+    margin-left: 10px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    margin-right: 6px;
+    padding: 3px;
+}
+
+.bt:hover{
+    background: #fff; 
+    color: black; 
 }
 
 .subContainer {
+    width: 210px;
     display: flex;
     flex-direction: column;
 }
