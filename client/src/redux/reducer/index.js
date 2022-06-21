@@ -32,19 +32,6 @@ const reducer = (state = initialState, action) => {
                 copy: action.payload
             }
 
-        // case GET_RECIPE_DB:
-        //     return {
-        //         ...state,
-        //         recipe: action.payload,
-        //         copia: action.payload
-        //     }
-
-        case DELETE:
-            return {
-                ...state,
-                delete: action.payload
-            }
-
         case GET_BY_NAME:
             console.log(action.payload)
             return {
@@ -61,7 +48,6 @@ const reducer = (state = initialState, action) => {
                     return b.name.localeCompare(a.name)
                 })
 
-            //    console.log(orden)
             return {
                 ...state,
                 recipe: [...orden]
@@ -132,14 +118,20 @@ const reducer = (state = initialState, action) => {
             }
 
         case FILTER_CREAD:
-           // console.log(action.payload)
+            // console.log(action.payload)
             const creatorFilter = action.payload === "createdInDb"
                 ? state.copy?.filter((el) => el.createdInDb) : state.copy?.filter((el) => !el.createdInDb)
-               // console.log(creatorFilter)
-               // console.log(state.copy)
+            // console.log(creatorFilter)
+            // console.log(state.copy)
             return {
                 ...state,
                 recipe: action.payload === "ALL" ? state.copy : creatorFilter
+            }
+
+        case DELETE:
+            return {
+                ...state,
+                delete: action.payload
             }
 
         default:

@@ -1,172 +1,128 @@
 .titlee {
     display: flex;
     justify-content: center;
-    font-family: cursive;
-    color: white;
-    text-transform: uppercase;
-    text-shadow: 4px 1px 0px rgba(213, 158, 0, 0.42);
-    /* margin-top: 3rem; */
+    margin-top: 2rem;
 }
+
 
 .contenedor {
-    width: 90%;
-    max-width: 120rem;
-    margin: 10px auto;
+    /* position: absolute; */
+    /* width: 70%; */
     padding: 5px;
-
-}
-
-
-.flexi {
+    min-width: 600px;
     display: flex;
     justify-content: center;
-    text-align: center;
-}
-
-.dish {
-    display: flex;
-    flex-direction: column;
-    padding: 5rem;
+    /* justify-items: center; */
 
 }
 
-.h {
-    background: rgb(189, 186, 186);
-    padding: 10px;
-    border-radius: 18px;
-    font-family: cursive;
-}
-
-.disty {
-    color: white;
-    font-family: cursive;
-    font-weight: 300;
-    margin: 1rem;
-}
-
-.diet {
-
-    padding: 2rem;
-    margin-top: 3rem;
-
-}
-
-.dishesanddiets {
-    padding: 10px;
-    background: rgb(189, 186, 186);
-    border-radius: 18px;
-    flex-direction: column;
-    font-size: 18px;
-    margin: 2px;
-    font-family: cursive;
-
-}
-
-.textsss {
-    display: flex;
-    color: white;
-    font-family: cursive;
-    font-weight: 300;
-    margin: 1rem;
-}
-
-.score {
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 1rem;
-
-}
-
-.t {
-    background: rgb(189, 186, 186);
+.content {
+   width: 70%;
+    background-color: rgb(255, 255, 255);
     padding: 15px;
     border-radius: 18px;
-    font-family: cursive;
-    font-weight: 300;
+    /* margin: 0 auto; */
+
 }
 
-.sum {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    
+.contentFirst {
+    background: rgb(231, 76, 60);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
 }
 
-.sumar {
-    color: rgb(0, 0, 0);
+.contentSecond {
+    /* background: rgb(240, 248, 131); */
+    background: #47bcd4;
+    padding: 10px;
+    border-radius: 10px;
     text-align: center;
     margin: 1rem;
-    font-family: cursive;
 }
 
-.sm {
-    background: rgb(245, 222, 179);
-    height: 95%;
+.textFirst {
+    margin: 1rem;
     text-align: center;
-    border-radius: 18px;
-    padding: 10px;
-    margin-left: 4rem;
 }
 
-.carto {
-    background-color: rgb(26, 23, 23, 0.8);
-    margin: 4rem;
-    padding: 15px;
+.sumary {
+    text-align: center;
+    margin: 1rem;
 }
+
 
 .im {
-    width: 250px;
-    height: 250px;
-    border-radius: 18px;
-    margin-left: 4rem;
-    margin-top: 3rem;
-}
-
-.stepp {
-    margin: 1rem;
     text-align: center;
 }
 
-.are {
-    background: rgb(245, 222, 179);
-    border-radius: 18px;
-    padding: 10px;
-    margin: 2rem;
-    font-family: cursive;
-}
-
-.ares {
-    background: rgb(245, 222, 179);
-    border-radius: 18px;
-    padding: 10px;
-    margin: 2rem;
-    width: 50%;
-}
-
-.tebla {
-    color: white;
-    font-family: cursive;
-    margin: 1rem;
+.img {
+    display: block;
+    margin: 0px auto;
+    width: 600px;
+    height: 400px;
 }
 
 .backButton {
-    background-color: wheat;
+    background-color: rgb(231, 76, 60);
     padding: 8px;
-    position: absolute;
+    /* position: absolute; */
     border-radius: 6px;
-    left: 140px;
+    left: 30px;
     top: 20px;
     font-family: Arial, Helvetica, sans-serif;
-    color: black;
+    color: white;
 }
 
-.crux {
-    background: wheat;
-    color: black;
-    padding: 15px;
-    font-weight: 700;
-    cursor: pointer;
-    position: absolute;
-    right: 8rem;
+.wrapper {
+    padding: 5px;
+    max-width: 960px;
+    width: 95%;
+    margin: 20px auto;
+}
 
+
+.columns {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 5px 0;
+}
+
+.column {
+    flex: 1;
+    border: 1px solid gray;
+    margin: 2px;
+    padding: 10px;
+}
+
+.column:first-child {
+    margin-left: 0;
+}
+
+.column:last-child {
+    margin-right: 0;
+}
+
+@media screen and (max-width: 980px) {
+    .columns .column {
+        margin-bottom: 5px;
+        flex-basis: 40%;
+    }
+
+    .columns .column:nth-last-child(2) {
+        margin-right: 0;
+    }
+
+    .columns .column:last-child {
+        flex-basis: 100%;
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .columns .column {
+        flex-basis: 100%;
+        margin: 0 0 5px 0;
+    }
 }

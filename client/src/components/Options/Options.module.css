@@ -1,8 +1,10 @@
 .flexi {
+    /* display: block; */
     position: relative;
     /* display: flex; */
-    /* margin: 3px; */
+    /* margin-bottom: 30px; */
     /* flex-wrap: wrap; */
+
 }
 
 select {
@@ -11,38 +13,6 @@ select {
     border: none;
     outline: none;
 }
-
-.crea button {
-    /* color: rgb(22, 17, 17);
-    background-color: beige;
-    padding: 7px; */
-    /* display:flex; */
-    top: .5rem;
-    position: absolute;
-
-    background-color: transparent;
-    color: #fff;
-    font-size: 25px;
-    font-family: Lato, Arial, Helvetica, sans-serif;
-    border-radius: 100px;
-    border: #fff solid 3px;
-    cursor: pointer;
-    transition-duration: 0.4s;
-    text-align: justify;
-    padding-top: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 15px;
-    margin-left: 1rem;
-}
-
-.crea button:hover {
-    background-color: #fff;
-    color: #220F00;
-    transition-delay: 0.2s;
-    transition: 0.8s;
-}
-
 
 .imgs {
     width: 80px;
@@ -77,5 +47,62 @@ select {
     /* margin-right: 60px; */
     /* flex-wrap: wrap; */
     margin: 1rem;
+    /* color:#fff; */
+    font-weight: bold;
+
 }
 
+a {
+    /* text-decoration:none; */
+    color: rgb(0, 0, 0);
+
+}
+
+.rainbowButton {
+    position: absolute;
+    width: calc(150px + 7px);
+    height: calc(65px + 7px);
+    background-image: linear-gradient(90deg, #00C0FF 0%, #3b3 49%, #f06c14 80%, #00C0FF 100%);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 3vw;
+    font-weight: bold;
+    font-size: 25px;
+    font-family: Lato, Arial, Helvetica, sans-serif;
+    top: .5rem;
+    border-radius: 100px;
+    /* border: #fff solid 6px; */
+    cursor: pointer;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    margin-left: 5rem;
+    color: black;
+}
+
+.rainbowButton:after {
+    position: absolute;
+    content: attr(alt);
+    width: 145px;
+    height: 60px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+}
+
+.rainbowButton:hover {
+    animation: slidebg 2s linear infinite;
+    border: none;
+}
+
+@keyframes slidebg {
+    to {
+        background-position: 20vw;
+    }
+}

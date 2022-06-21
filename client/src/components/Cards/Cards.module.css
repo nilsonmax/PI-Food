@@ -1,30 +1,13 @@
-.score {
-    font-size: 14px;
-    color: withe;
-    color: rgb(0, 0, 0);
-    background: rgb(236, 204, 138);
-    margin:0;
-
-}
-
 .name {
-    font-family: cursive;
-    margin: 3px;
-    color: rgb(245, 237, 220);
-    text-shadow: 0.1em 0.1em 0.2em black;
-}
-
-img {
-    width: 100%;
-}
-
-p {
-    text-align: center;
-    align-items: center;
-    height: 23px;
-}
+    /* font-family: cursive; */
+    margin: 20px;
+    /* color: rgb(245, 237, 220);
+    text-shadow: 0.1em 0.1em 0.2em black; */
+} 
 
 .conteiner {
+    
+    position:relative;
     width: 90%;
     max-width: 120rem;
     margin: 1px auto;
@@ -43,15 +26,60 @@ p {
     /* color: beige; */
 }
 
-.image {
-    background-size: cover;
-    margin:0;
-}
+.card {
+    position:relative;
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 250px;
+  }
 
-.diets {
-    background: rgb(243, 222, 179);
-    height: 70px;
-    /* border-radius: 24px; */
-    padding: 2px;
-    font-family: cursive;
-}
+  .card:hover {
+    transform: translateY(-.5%);
+    box-shadow: 0 4rem 8rem rgba(0, 0, 0, .2);
+  }
+
+  .cardHeader img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .cardBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    min-height: 250px;
+  }
+  
+  .tag {
+    background: #cccccc;
+    border-radius: 50px;
+    font-size: 12px;
+    margin: 0;
+    color: #fff;
+    padding: 2px 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .tagTeal {
+    background-color: #47bcd4;
+  }
+
+  .tagPurple {
+    background-color: #5e76bf;
+  }
+  
+  .tagPink {
+    background-color: #cd5b9f;
+  }
+  
+  .cardBody p {
+    font-size: 13px;
+    margin: 0 0 40px;
+  }

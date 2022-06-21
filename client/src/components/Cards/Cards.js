@@ -1,22 +1,21 @@
 import { Link } from 'react-router-dom'
 import s from '../Cards/Cards.module.css'
 
-const Card = ({ id, name, image, healthyScore, diets}) => {
+const Card = ({ id, name, image, healthyScore, diets }) => {
 
     return (
-    //    <div>estoy en cards</div> 
-        <div className={s.grid}>
-
-            <div className={s.conteiner}>
-
-                <Link to={`/recipe/${id}`}>
-                    <p className={s.name}>{name}</p>
-                </Link>
-                <img width={240} className={s.image} height={240} src={image} alt="" />
-                <p className={s.score}>Score: {healthyScore}</p>
-                 <p className={s.diets}>{diets}</p> {console.log(diets)}
-            </div>
-
+        //    <div>estoy en cards</div> 
+        <div className={s.card}>
+            <Link to={`/recipe/${id}`}>
+                <div className={s.cardHeader}>
+                    <img src={image} alt="" />
+                </div>
+                <div className={s.cardBody}>
+                    <span className={`${s.tag} ${s.tagTeal}`}>Score: {healthyScore}% </span>
+                    <h4 className={s.name}>{name}</h4>
+                    <p>{diets}</p>
+                </div>
+            </Link>
         </div>
     )
 }

@@ -36,8 +36,8 @@ const Home = () => {
 
     //paginacion
     const [currentPage, setCurrentPage] = useState(1)
-    const [couPerPage] = useState(9)
-    const indexlast = currentPage * couPerPage; // devuelve 9
+    const [couPerPage] = useState(12)
+    const indexlast = currentPage * couPerPage; // devuelve 12
     const indexFirst = indexlast - couPerPage; // 0
     const allpages = recipes.slice(indexFirst, indexlast)
 
@@ -54,11 +54,6 @@ const Home = () => {
         dispatch(getRecipes())
     }, [dispatch])
 
-    const refres = (e) => {
-        e.preventDefault()
-        window.location.reload()
-    }
-
     let estilo = {}
     estilo = stickyClass
 
@@ -66,23 +61,23 @@ const Home = () => {
         <>
             <div className={`${s.options} ${estilo}`}>
                 <Options set={setCurrentPage} />
-
             </div>
-            <div className={s.refres}>
-                <button className={s.btn} onClick={refres}> <p className={s.na}>refresh</p>🍽</button>
+
+            <div className={s.search}>
                 <div><Search /> </div>
-
             </div>
+
             <Paginacion recipes={recipes.length}
                 couPerPage={couPerPage}
                 paginado={paginado} />
+
             <div className={s.flex}>
 
                 {
                     allpages.length > 0 && !loading ? (
 
                         allpages?.map((r) => {
-                            
+
                             return (
 
                                 <Card
@@ -91,8 +86,8 @@ const Home = () => {
                                     name={r.name}
                                     image={r.image}
                                     //diets={r.diets ? r.diets : r.Diets.map(e => e.name)}
-                                    
-                                    diets={r.createdInDb ? r.diets.map(r => <p className={s.diet} >{r.name}</p>): r.diets}
+
+                                    diets={r.createdInDb ? r.diets.map(r => <p className={s.diet} >{r.name}</p>) : r.diets}
                                     healthyScore={r.healthyScore}
                                 />
 

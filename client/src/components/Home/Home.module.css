@@ -1,85 +1,115 @@
-div .flex{    
+div .flex {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
     place-items: center;
-    place-content: center;
-   
-
+    /* place-content: center; */
+    /* height: 100vh; */
+    /* position: relative; */
 }
+
 @media screen and (max-width:900px) {
-    div .flex{
-       grid-template-columns: repeat(3,1fr);
+    div .flex {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
+
 @media screen and (max-width:760px) {
-    div .flex{
-       grid-template-columns: repeat(2,1fr);
+    div .flex {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media screen and (max-width:450px) {
-    div .flex{
-       grid-template-columns: repeat(1,1fr);
+    div .flex {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
-.refres{
-    display: flex;
-    justify-content: center;
-   
-   
-}
-.btn p{
-    font-size: 14px;
-}
-.btn{
-    
-    font-size: 40px;
-    color: rgba(245, 222, 179, 0.61);
+
+.fondo {
+    background: url(../../images/fondo-home.jpg);
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-.conteiner{
+.fondo:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.btn p {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.btn {
+    font-size: 40px;
+    color: rgba(231, 76, 60);
+}
+
+.conteiner {
     width: 90%;
     max-width: 120rem;
     margin: 1px auto;
+
 }
 
-.options{
-    background: rgba(0, 0, 0, 0.2);
-    color: black; 
+.options {
+    background: rgba(231, 76, 60);
+    /* color: black; */
     width: 100%;
     /* position: fixed; */
     /* display:flex; */
     /* justify-content: center; */
     /* padding: 20px 30px; */
+    position: relative;
 
 }
 
 .stickyNav {
+    /* position: absolute; */
     position: fixed;
     /* display: flex; */
     /* justify-content: center; */
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(231, 76, 60, 0.9);
     color: black;
     width: 100%;
-    height:150px;
+    height: 150px;
+    float:top; 
+    z-index: 10;
+
 }
 
-.na{
-    font-size:18px;
-    color: rgba(214, 195, 159, 0.623);
+.na {
+    font-size: 18px;
+    /* color: rgba(214, 195, 159, 0.623); */
+    color: rgba(231, 76, 60);
 }
 
-.parrafe{
+.parrafe {
     font-size: 17px;
 }
 
-.letras{
+.letras {
     color: white;
 }
 
-.letrasTransparent{
-     color:transparent;
+.letrasTransparent {
+    color: transparent;
 }
 
 .diet {

@@ -128,145 +128,155 @@ const Create = () => {
 
 
     return (
-        <div className={s.formulario}>
+        <div className={s.fondo}>
+            <div className={s.formulario}>
 
-            <Link to="/home" className={s.linkB}>
-                <span>back</span>
-            </Link>
+                <Link to="/home" className={s.linkB}>
+                    <span>back</span>
+                </Link>
 
-            <form action="" onSubmit={(e) => handleSubmit(e)} className={s.fondoform}>
+                <form action="" onSubmit={(e) => handleSubmit(e)} className={s.fondoform}>
 
-                <label htmlFor="">URL Img</label>
-                <div>
-                    <input className={s.inputt}
-                        type="text"
-                        value={input.image}
-                        name='image'
-                        onChange={handleChange}
-                    />
-
-                    {
-                        errors.image && (
-                            <p className={s.error}>{errors.image}</p>
-                        )
-                    }
-                </div>
-
-                <label htmlFor="">name</label>
-                <div>
-                    <input className={s.inputt}
-                        type="text"
-                        value={input.name}
-                        name='name'
-                        onChange={handleChange}
-                    />
-
-                    {
-                        errors.name && (
-                            <p className={s.error}>{errors.name}</p>
-                        )
-                    }
-                </div>
-
-                <label htmlFor="">summary</label>
-                <div>
-                    <input className={s.inputt}
-                        type="text"
-                        value={input.summary}
-                        name="summary"
-                        onChange={handleChange}
-                    />
-
-                    {
-                        errors.summary && (
-                            <p className={s.error}>{errors.summary}</p>
-                        )
-                    }
-                </div>
-
-                <label htmlFor="">dishTypes</label>
-                <div>
-                    <input className={s.inputt}
-                        type="text"
-                        value={input.dishTypes}
-                        name="dishTypes"
-                        onChange={handleChange}
-                    />
-
-                    {
-                        errors.dishTypes && (
-                            <p className={s.error}>{errors.dishTypes}</p>
-                        )
-                    }
-                </div>
-
-                <label htmlFor="">HealthyScore</label>
-                <div>
-                    <input className={s.inputs}
-                        type="number"
-                        value={input.healthyScore}
-                        name="healthyScore"
-                        placeholder='0-100'
-                        min="1"
-                        max="100"
-                        onChange={handleChange}
-                    />
-
-                    {
-                        errors.healthyScore && (
-                            <p className={s.error}>{errors.healthyScore}</p>
-                        )
-                    }
-                </div>
-
-                <label htmlFor="">Step by Step</label>
-                <div>
-                    <textarea className={s.textar} onChange={handleChange} type="text" name="steps" value={input.steps}>
-                    </textarea>
-
-                    {
-                        errors.steps && (
-                            <p className={s.error}>{errors.steps}</p>
-                        )
-                    }
-                </div>
-
-                <div className={s.op}>
-                    <select onChange={handleSelect} className={s.selet}>
-                        <option value={input.diets} name="diets">Diet..</option>
+                    <label htmlFor="">URL Img</label>
+                    <div>
+                        <input className={s.inputt}
+                            type="text"
+                            value={input.image}
+                            name='image'
+                            onChange={handleChange}
+                        />
 
                         {
-                            diet?.map(c => {
-                                return (
-                                    <option key={c.id} value={c.name}>{c.name}</option>
-                                )
-                            })
+                            errors.image && (
+                                <p className={s.error}>{errors.image}</p>
+                            )
                         }
-                    </select>
+                    </div>
 
+                    <label htmlFor="">name</label>
+                    <div>
+                        <input className={s.inputt}
+                            type="text"
+                            value={input.name}
+                            name='name'
+                            onChange={handleChange}
+                        />
+
+                        {
+                            errors.name && (
+                                <p className={s.error}>{errors.name}</p>
+                            )
+                        }
+                    </div>
+
+                    <label htmlFor="">summary</label>
+                    <div>
+                        <input className={s.inputt}
+                            type="text"
+                            value={input.summary}
+                            name="summary"
+                            onChange={handleChange}
+                        />
+
+                        {
+                            errors.summary && (
+                                <p className={s.error}>{errors.summary}</p>
+                            )
+                        }
+                    </div>
+
+                    <label htmlFor="">dishTypes</label>
+                    <div>
+                        <input className={s.inputt}
+                            type="text"
+                            value={input.dishTypes}
+                            name="dishTypes"
+                            onChange={handleChange}
+                        />
+
+                        {
+                            errors.dishTypes && (
+                                <p className={s.error}>{errors.dishTypes}</p>
+                            )
+                        }
+                    </div>
+
+                    {/* <div className={styles.subContainer}> */}
+                    {/* label className={styles.subTitle}>Puntuación Salud</label> 
+                    <input className={styles.subInput} type="range" min="0" max="100" value={post.healthScore} name="healthScore" onChange={(e) => handleChange(e)}></input>
+                    {<p className={styles.data}>{post.healthScore}</p>}
+                </div> */}
+
+                    <label htmlFor="">HealthyScore</label>
+                    <div className={s.subContainer}>
+                        <input className={s.subinput}
+                            // type="number"
+                            type="range" min="1" max="100"
+                            value={input.healthyScore}
+                            name="healthyScore"
+                            //placeholder='0-100'
+                            // min="1"
+                            // max="100"
+                            onChange={handleChange}
+                        />
+
+                        {
+                            errors.healthyScore && (
+                                <p className={s.error}>{errors.healthyScore}</p>
+                            )
+                        }
+                    </div>
+                    <label htmlFor="">{`Point: ${input.healthyScore ? input.healthyScore : 0}%`}</label>
+
+                    <label htmlFor="">Step by Step</label>
+                    <div>
+                        <textarea className={s.textar} onChange={handleChange} type="text" name="steps" value={input.steps}>
+                        </textarea>
+
+                        {
+                            errors.steps && (
+                                <p className={s.error}>{errors.steps}</p>
+                            )
+                        }
+                    </div>
+
+                    <div>
+                        <select onChange={handleSelect} className={s.selet}>
+                            <option value={input.diets} name="diets">Diet..</option>
+
+                            {
+                                diet?.map(c => {
+                                    return (
+                                        <option key={c.id} value={c.name}>{c.name}</option>
+                                    )
+                                })
+                            }
+                        </select>
+
+                        {
+                            errors.diets && (
+                                <p className={s.error}>{errors.diets}</p>
+                            )
+                        }
+                    </div>
+
+                    <button type='submit' className={s.bto} onSubmit={handleSubmit} disabled={Object.keys(errors).length === 0 ? false : true}>Crear</button>
+
+                </form>
+
+                <div className={s.xx}>
                     {
-                        errors.diets && (
-                            <p className={s.error}>{errors.diets}</p>
-                        )
+                        input.diets.map((el) => (
+                            <div key={el} className={s.a}>
+                                <span >{el}</span >
+                                <button className={s.bt} onClick={() => handleDelete(el)}> x </button>
+                            </div>
+                        ))
                     }
                 </div>
 
-                <button type='submit' className={s.bto} onSubmit={handleSubmit} disabled={Object.keys(errors).length === 0 ? false : true}>Crear</button>
-
-            </form>
-
-            <div className={s.xx}>
-                {
-                    input.diets.map((el) => (
-                        <div key={el} className={s.a}>
-                            <span >{el}</span >
-                            <button className={s.bt} onClick={() => handleDelete(el)}> x </button>
-                        </div>
-                    ))
-                }
             </div>
-
-        </div>
+         </div>
     )
 }
 

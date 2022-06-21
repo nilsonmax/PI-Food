@@ -47,8 +47,8 @@ const Options = ({ set }) => {
             <div className={s.firstContainer}>
                 <div>
                     <img className={s.imgs} src={plato} alt="" />
-                    <Link to="/recipe/create" className={s.crea}>
-                        <button>Create Recipes</button>
+                    <Link to="/recipe/create" >
+                        <button className={s.rainbowButton} alt="Create"></button>
                     </Link>
                 </div>
                 <div> <Search /></div>

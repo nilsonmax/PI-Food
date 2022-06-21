@@ -68,6 +68,7 @@ export const getDetail = (id) => {
     return async (dispatch) => {
         try {
 
+            // const res = await axios.get(`http://localhost:3001/recipes/716426`)
             const res = await axios.get(`http://localhost:3001/recipes/${id}`)
             return dispatch({
                 type: GET_DIET,

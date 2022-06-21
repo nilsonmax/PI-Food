@@ -2,22 +2,23 @@
     display: flex;
     justify-content: center;
     list-style: none;
+    position: relative;
 }
 
 .nave{
     padding: 1rem;
 }
 .nave  span{
-    color: rgb(245, 244, 244);
+    color: rgba(231, 76, 60);
     padding: 7px;
-    background: rgb(53, 50, 50, 0.6);
+    background: rgb(255, 255, 255);
     margin: 2px;
     font-weight: 600;
-    border:1px solid rgb(53, 50, 50);;
+    border:1px solid rgba(231, 76, 60);
     cursor: pointer;
 }
 
 .nave span:hover{
-    color: black;
-    background-color: blanchedalmond;
+    color: white;
+    background-color: rgba(231, 76, 60);
 }
