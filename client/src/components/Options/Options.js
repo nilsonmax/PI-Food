@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import s from '../Options/Options.module.css'
 import { getCreates, getFilterAsc, getFilterMax, getRecipes, getTypeDiet } from '../../redux/action'
 import { Link } from 'react-router-dom'
-import plato from "../../images/plato.gif"
+import logo from "../../images/Logoteamfoods.png"
 import Search from '../Search/Search'
 
 
@@ -44,7 +44,7 @@ const Options = ({ set }) => {
             <div className={s.firstContainer}>
                 <div>
                     <Link to="/" >
-                        <img className={s.imgs} src={plato} alt="" />
+                        <img className={s.imgs} src={logo} alt="" />
                     </Link>
                     <Link to="/recipe/create" >
                         <button className={s.rainbowButton} alt="Create"></button>

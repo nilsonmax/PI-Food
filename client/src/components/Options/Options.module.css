@@ -15,13 +15,13 @@ select {
 }
 
 .imgs {
-    width: 80px;
+    width: 100px;
     /* position: absolute; */
     /* left: 0.1rem; */
     /* margin-top: 2rem; */
-    /* margin: 1rem; */
-    padding-right: 1rem;
-    /* margin-left: 0; */
+    margin: .5rem;
+    /* padding: 20px; */
+    /* left: 200; */
 }
 
 .firstContainer {
@@ -80,8 +80,9 @@ a {
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 15px;
-    margin-left: 5rem;
+    margin-left: 7rem;
     color: black;
+    border: none;
 }
 
 .rainbowButton:after {

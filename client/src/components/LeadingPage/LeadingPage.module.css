@@ -1,84 +1,164 @@
-.fondo{
-    background-image: url(../../images/leadingpage.jpg);
-    width: 100%;
-    /* height: 100%; */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  
-}
-.flex{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 21rem;
+.fondo {
+  /* background-image: url(../../images/leadingpage.jpg); */
+  background-color: rgba(255, 255, 255);
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  position: absolute;
 }
 
-.box {
-    width: 140px;
-    height: auto;
-    float: left;
-    transition: .5s linear;
-    position: relative;
-    display: block;
-    overflow: hidden;
-    padding: 15px;
-    text-align: center;
-    margin: 0 5px;
-    background: transparent;
-    text-transform: uppercase;
-    font-weight: 900;
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 21rem;
+}
+
+
+.rainbowButton {
+  /* position: absolute; */
+  width: calc(150px + 7px);
+  height: calc(65px + 7px);
+  background-image: linear-gradient(90deg, #00C0FF 0%, #3b3 49%, #f06c14 80%, #00C0FF 100%);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-size: 3vw;
+  font-weight: bold;
+  font-size: 25px;
+  font-family: Lato, Arial, Helvetica, sans-serif;
+  top: .5rem;
+  border-radius: 100px;
+  /* border: #fff solid 6px; */
+  cursor: pointer;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  margin-left: 20rem;
+  /* color: black; */
+  border: none;
+}
+
+.rainbowButton:after {
+  position: absolute;
+  content: attr(alt);
+  width: 145px;
+  height: 60px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+}
+
+.rainbowButton:hover {
+  animation: slidebg 2s linear infinite;
+  border: none;
+
+}
+
+@keyframes slidebg {
+  to {
+    background-position: 20vw;
   }
-  
-  .box:before {
-    position: absolute;
-    content: '';
-    left: 0;
-    bottom: 0;
-    height: 4px;
-    width: 100%;
-    border-bottom: 4px solid transparent;
-    border-left: 4px solid transparent;
-    box-sizing: border-box;
-    transform: translateX(100%);
+}
+
+/********* img **********/
+
+
+.img {
+  float: right;
+  display: block;
+  /* margin: 0px auto; */
+  width: 900px;
+  height: 720px;
+  transform: scaleX(-1);
+  border: none;
+}
+
+.p {
+  top: 12rem;
+  clear: right;
+  display: block;
+  left: 12rem;
+  width: 500px;
+  padding: 10px;
+  font-size: 40px;
+}
+
+.p1 {
+  top: 12rem;
+  clear: right;
+  display: block;
+  left: 12rem;
+  width: 500px;
+  padding: 20px;
+}
+/******************/
+
+.wrapper {
+  position: relative;
+  /* padding: 5px; */
+  /* max-width: 960px; */
+  width: 100%;
+  /* margin: 170px auto; */
+  margin-top: 170px;
+  margin-left: 200px;
+
+  padding: 30px;
+}
+
+.column2{
+  margin: 0;
+}
+.columns {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+
+}
+
+.column {
+  flex: 1;
+  /* border: 1px solid gray; */
+  margin: 0;
+  /* padding: 10px; */
+
+}
+
+.column:first-child {
+  margin-left: 0;
+}
+
+.column:last-child {
+  margin-right: 0;
+}
+
+@media screen and (max-width: 980px) {
+  .columns .column {
+    margin-bottom: 5px;
+    flex-basis: 40%;
   }
-  
-  .box:after {
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    border-top: 4px solid transparent;
-    border-right: 4px solid transparent;
-    box-sizing: border-box;
-    transform: translateX(-100%);
+
+  .columns .column:nth-last-child(2) {
+    margin-right: 0;
   }
-  
-  .box:hover {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+
+  .columns .column:last-child {
+    flex-basis: 100%;
+    margin: 0;
   }
-  
-  .box:hover:before {
-    border-color: #262626;
-    height: 100%;
-    transform: translateX(0);
-    transition: .3s transform linear, .3s height linear .3s;
+}
+
+@media screen and (max-width: 780px) {
+  .columns .column {
+    flex-basis: 100%;
+    /* margin: 0 0 5px 0; */
   }
-  
-  .box:hover:after {
-    border-color: #262626;
-    height: 100%;
-    transform: translateX(0);
-    transition: .3s transform linear, .3s height linear .5s;
-  }
-  
-  button {
-    color: rgb(189, 185, 185);
-    text-decoration: none;
-    cursor: pointer;
-    outline: none;
-    border: none;
-    background: transparent;
-  }
+}

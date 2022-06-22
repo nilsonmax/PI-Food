@@ -17,6 +17,7 @@
     cursor: pointer;
     padding: 3px;
     /* margin-top: 1rem; */
+    border: none;
 }
 
 .inputButton:hover {

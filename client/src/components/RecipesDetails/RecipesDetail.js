@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom'
-import { cleanData, getDetail, Remove } from '../../redux/action/index'
+import { cleanData, getDetail } from '../../redux/action/index'
 import s from '../RecipesDetails/RecipesDetails.module.css'
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 import Loading from '../Loading/Loading'
 import NotFound from '../NotFound/NotFound'
 
 const RecipesDetail = () => {
     const { id } = useParams()
     const dispatch = useDispatch()
-    let navigate = useNavigate()
+    // let navigate = useNavigate()
     const details = useSelector((state) => state.detail)
     console.log(details)
 
@@ -19,13 +19,13 @@ const RecipesDetail = () => {
         return dispatch(cleanData(id))
     }, [dispatch, id])
 
-    let handle = (e) => {
-        e.preventDefault(e)
-        dispatch(Remove(id))
-        alert("successfully deleted")
-        navigate("/home")
-        return dispatch(cleanData(id))
-    }
+    // let handle = (e) => {
+    //     e.preventDefault(e)
+    //     dispatch(Remove(id))
+    //     alert("successfully deleted")
+    //     navigate("/home")
+    //     return dispatch(cleanData(id))
+    // }
 
     let [loading, setLoading] = useState(true)
 
@@ -96,12 +96,8 @@ const RecipesDetail = () => {
 
                     </div>
 
-                ) : typeof details.name === 'undefined' && loading ? (
-                    <Loading />
-                ) : (
-                    <NotFound />
-                )
-
+                ) : (<Loading />)
+ 
             }
 
         </>)
