@@ -5,7 +5,7 @@ import { cleanData, getDetail } from '../../redux/action/index'
 import s from '../RecipesDetails/RecipesDetails.module.css'
 // import { useNavigate } from 'react-router-dom'
 import Loading from '../Loading/Loading'
-import NotFound from '../NotFound/NotFound'
+
 
 const RecipesDetail = () => {
     const { id } = useParams()
@@ -96,7 +96,7 @@ const RecipesDetail = () => {
 
                     </div>
 
-                ) : (<Loading />)
+                ) : (!details.name !== 'undefined' && loading ? <Loading />:<Loading />)
  
             }
 

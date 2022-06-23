@@ -16,9 +16,6 @@ const getApìDiets = async () => {
                 where: { name: d }
             })
        })
-
-        // const allDiets = await Diet.findAll()
-        // return allDiets
     
     } catch (error) {
         console.log(error)
@@ -40,4 +37,4 @@ const dbDiets = async (req, res) => {
 module.exports = {
     getApìDiets,
     dbDiets
-};
+}

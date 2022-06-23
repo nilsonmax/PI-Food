@@ -1,5 +1,6 @@
 import React from 'react'
 import s from '../Paginacion/Paginacion.module.css'
+
 const Paginacion = ({ recipes, couPerPage, paginado }) => {
 	const pageNumber = []
 

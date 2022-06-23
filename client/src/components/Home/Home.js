@@ -28,6 +28,7 @@ const Home = () => {
     // para mostrar los recipes
     const dispatch = useDispatch()
     const recipes = useSelector((state) => state.recipe)
+    
     useEffect(() => {
         dispatch(getRecipes())
     }, [dispatch])
@@ -40,7 +41,7 @@ const Home = () => {
     const indexlast = currentPage * couPerPage; // devuelve 12
     const indexFirst = indexlast - couPerPage; // 0
     const allpages = recipes.slice(indexFirst, indexlast)
-
+// console.log(indexlast,indexFirst, allpages )
 
     const paginado = (pageNumber) => {
         setCurrentPage(pageNumber)
@@ -85,8 +86,6 @@ const Home = () => {
                                     id={r.id}
                                     name={r.name}
                                     image={r.image}
-                                    //diets={r.diets ? r.diets : r.Diets.map(e => e.name)}
-
                                     diets={r.createdInDb ? r.diets.map(r => <p className={s.diet} >{r.name}</p>) : r.diets}
                                     healthyScore={r.healthyScore}
                                 />

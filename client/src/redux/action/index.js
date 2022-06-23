@@ -67,7 +67,6 @@ export const types = () => {
 export const getDetail = (id) => {
     return async (dispatch) => {
         try {
-
             // const res = await axios.get(`http://localhost:3001/recipes/716426`)
             const res = await axios.get(`http://localhost:3001/recipes/${id}`)
             return dispatch({
@@ -82,7 +81,7 @@ export const getDetail = (id) => {
 }
 
 export const postCreate = (payload) => {
-    return async (dispatch) => {
+    return async () => {
         try {
 
             const json = await axios.post(
