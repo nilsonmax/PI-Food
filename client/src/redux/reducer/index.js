@@ -5,12 +5,11 @@ import {
     GET_TYPES,
     GET_TYPES_DIET,
     POST_RECIPE,
-    CLEAN_DATA,
-    CLEAR_DETAIL,
+    // CLEAN_DATA,
+    // CLEAR_DETAIL,
     FILTER_ASC,
     FILTER_CREAD,
     FILTER_MIN,
-    DELETE,
     // GET_RECIPE_DB
 } from "../action/index"
 
@@ -20,7 +19,6 @@ const initialState = {
     typeDiets: [],
     detail: {},
     detailPost: [],
-    delete: []
 }
 
 const reducer = (state = initialState, action) => {
@@ -33,7 +31,7 @@ const reducer = (state = initialState, action) => {
             }
 
         case GET_BY_NAME:
-            console.log(action.payload)
+           // console.log(action.payload)
             return {
                 ...state,
                 recipe: action.payload
@@ -73,12 +71,12 @@ const reducer = (state = initialState, action) => {
                 typeDiets: action.payload
             }
 
-        case CLEAN_DATA:
-            return {
-                ...state,
-                detail: action.payload
+        // case CLEAN_DATA:
+        //     return {
+        //         ...state,
+        //         detail: action.payload
 
-            }
+        //     }
 
         case FILTER_MIN:
             const scoreSorted = state.recipe ? state.recipe : state.recipe
@@ -112,10 +110,10 @@ const reducer = (state = initialState, action) => {
             }
         }
 
-        case CLEAR_DETAIL:
-            return {
-                ...state
-            }
+        // case CLEAR_DETAIL:
+        //     return {
+        //         ...state
+        //     }
 
         case FILTER_CREAD:
             // console.log(action.payload)
@@ -126,12 +124,6 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 recipe: action.payload === "ALL" ? state.copy : creatorFilter
-            }
-
-        case DELETE:
-            return {
-                ...state,
-                delete: action.payload
             }
 
         default:

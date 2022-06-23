@@ -7,11 +7,10 @@ export const GET_BY_NAME = "GET_BY_NAME"
 export const GET_DIET = "GET_DIET"
 export const POST_RECIPE = "POST_RECIPE"
 export const CLEAN_DATA = "CLEAN_DATA"
-export const CLEAR_DETAIL = "CLEAR_DETAIL"
+// export const CLEAR_DETAIL = "CLEAR_DETAIL"
 export const FILTER_ASC = "FILTER_ASC"
 export const FILTER_MIN = "FILTER_MIN"
 export const FILTER_CREAD = "FILTER_CREAD"
-export const DELETE = "DELETE"
 
 export const getRecipes = () => {
     return async (dispatch) => {
@@ -96,20 +95,6 @@ export const postCreate = (payload) => {
     }
 }
 
-export const Remove = (id) => {
-    return (dispatch) => {
-        axios.delete(`http://localhost:3001/recipes/delete/${id}`).then((remo) => {
-            dispatch({
-                type: DELETE,
-                payload: remo.id
-            })
-
-        }).catch(error => {
-            console.log(error)
-        })
-    }
-}
-
 export const getTypeDiet = (payload) => {
     return {
         type: GET_TYPES_DIET,
@@ -137,11 +122,11 @@ export const getCreates = (payload) => {
     }
 }
 
-export const cleanData = () => {
-    return (dispatch) => {
-        dispatch({
-            type: CLEAN_DATA,
-            payload: {}
-        })
-    }
-}
+// export const cleanData = () => {
+//     return (dispatch) => {
+//         dispatch({
+//             type: CLEAN_DATA,
+//             payload: {}
+//         })
+//     }
+// }

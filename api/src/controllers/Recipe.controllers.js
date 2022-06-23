@@ -44,7 +44,7 @@ const getDbInfo = async () => {
             attributes: ['name'],
             through: {
                 attributes: []
-            } //ver si la sintaxis esta bien escrita
+            }
         }
     })
     return dietFindAll
@@ -126,28 +126,12 @@ const postCreate = async (req, res) => {
     }
 }
 
-
-const deleted = async (req, res) => {
-    let { id } = req.params
-    await Recipe.destroy({
-        where: {
-            id: id
-        }
-    }).then(count => {
-        if (!count) {
-            return res.status(404).send({ error: 'No user' })
-        }
-        res.status(204).send()
-    })
-}
-
 module.exports = {
     getApiInfo,
     getDbInfo,
     getIdRecipe,
     getByName,
     postCreate,
-    deleted,
     // getDbMostrar
 }
 

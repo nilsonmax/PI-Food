@@ -134,22 +134,6 @@ const Create = () => {
                
                 <form action="" onSubmit={(e) => handleSubmit(e)} className={s.fondoform}>
                 
-                    <label htmlFor="">URL Img</label>
-                    <div>
-                        <input className={s.inputt}
-                            type="text"
-                            value={input.image}
-                            name='image'
-                            onChange={handleChange}
-                        />
-
-                        {
-                            errors.image && (
-                                <p className={s.error}>{errors.image}</p>
-                            )
-                        }
-                    </div>
-
                     <label htmlFor="">name</label>
                     <div>
                         <input className={s.inputt}
@@ -166,6 +150,23 @@ const Create = () => {
                             )
                         }
                     </div>
+                    
+                    <label htmlFor="">URL Img</label>
+                    <div>
+                        <input className={s.inputt}
+                            type="text"
+                            value={input.image}
+                            name='image'
+                            onChange={handleChange}
+                        />
+
+                        {
+                            errors.image && (
+                                <p className={s.error}>{errors.image}</p>
+                            )
+                        }
+                    </div>
+
 
                     <label htmlFor="">summary</label>
                     <div>

@@ -1,31 +1,19 @@
 import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import {  useDispatch, useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom'
-import { cleanData, getDetail } from '../../redux/action/index'
+import { getDetail } from '../../redux/action/index'
 import s from '../RecipesDetails/RecipesDetails.module.css'
-// import { useNavigate } from 'react-router-dom'
 import Loading from '../Loading/Loading'
-
 
 const RecipesDetail = () => {
     const { id } = useParams()
     const dispatch = useDispatch()
-    // let navigate = useNavigate()
     const details = useSelector((state) => state.detail)
     console.log(details)
 
     useEffect(() => {
         dispatch(getDetail(id))
-        return dispatch(cleanData(id))
     }, [dispatch, id])
-
-    // let handle = (e) => {
-    //     e.preventDefault(e)
-    //     dispatch(Remove(id))
-    //     alert("successfully deleted")
-    //     navigate("/home")
-    //     return dispatch(cleanData(id))
-    // }
 
     let [loading, setLoading] = useState(true)
 
@@ -65,8 +53,6 @@ const RecipesDetail = () => {
                             </div>
                             <section className={s.wrapper}>
                                 <div className={s.columns}>
-                                    {/* {details.Diets ? <button className={s.crux} onClick={(e) => handle(e)}>Remove</button> : ""}
-                                    */}
                                     <div className={s.column}>
                                         <h3 className={s.textFirst}>Diet Type:</h3>
                                         {details.createdInDb ? details.diets.map((e, i) => <h2 key={i} className={s.contentFirst}>{e.name}</h2>)

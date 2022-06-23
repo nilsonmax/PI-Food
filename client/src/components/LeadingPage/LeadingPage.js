@@ -19,11 +19,6 @@ const LeadingPage = () => {
               <button className={`${s.box} ${s.rainbowButton} `} alt="login"></button>
             </Link>
           </div>
-          {/* <div className={s.column}>
-          </div> */}
-          {/* <div className={s.column}> 
-          <img className={s.img} src={platos} alt="" />
-          </div> */}
         </div>
       </div>
     </div>
